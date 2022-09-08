@@ -13,10 +13,7 @@ body {
   background: #e6e6e6;
 }
 
-.camryn-bg{
-  background-color: #6ab1cf;
-  color: white;
-}
+
 
 .danger-bg{
   background-color: red;
@@ -36,9 +33,13 @@ body {
 }
 .testImg{
   display: block;
-  width: 50%;
+  width: 25%;
   margin: 0 auto;
 }
 
+#parent{
+    background-color: #6ab1cf;
+    color: white;
+  }
 
 

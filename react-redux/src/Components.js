@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import thick from "./thick.png"
+import food from "./food.jpg"
 import franklin from "./franklin.png"
 
 // class Top extends Component{
@@ -24,63 +24,54 @@ class Camryn extends Component{
 
   imgClicked = () =>{
     console.log(`image clicked`);
-    this.setState({health: this.state.health -10}, console.log(`img clicked: healh now ${this.state.health}!`))
+    this.setState({health: this.state.health -10}, console.log(`img clicked: healh now ${this.state.health - 10}!`))
   }
   
   render(){
       return (
         <div id="parent">
-          <div className={`camryn-bg`}>
+          <div>
             <div className={`userInfo ${this.state.health < 55 ? this.state.lowLevelClass: ""}`}>
               <h3>Name: {this.state.name}</h3>
-              <h3>Health: {this.state.health}</h3>
               <h3>Level: {this.state.level}</h3>
             </div>
-            <div className="img-container">
-              <img className="testImg" src={thick}  alt="beach-pic" onClick={this.imgClicked}/>
-            </div>
           </div>
+
+          <GirlImage trigger={this.imgClicked} health ={this.state.health}/>
         </div>
       )
   }
-
 }
 
-// class Franklin extends Component{
-//   constructor(){
-//     super()
-//     this.state = {
-//       name: "Franklin",
-//       health: 100,
-//       level: 1,
-//       lowLevelClass: 'danger-bg'
-//     }
-//   }
+class GirlImage extends Component{
+  constructor(){
+    super()
+    this.state = {
+      gameOver: `Sorry YOU'RE DONE!`
+    }
+  }
 
-//   imgClicked = () =>{
-//     console.log(`image clicked`);
-//     this.setState({health: this.state.health -10}, console.log(`img clicked: healh now ${this.state.health}!`))
-//   }
-  
-//   render(){
-//       return (
-//         <div id="parent">
-//           <div className={`franklin-bg ${this.state.health < 55 ? this.state.lowLevelClass: ""}`}>
-//             <h3>Name: {this.state.name}</h3>
-//             <h3>Health: {this.state.health}</h3>
-//             <h3>Level: {this.state.level}</h3>
-//             <img className="testImg" src={franklin}  alt="franklin-GTA-5" onClick={this.imgClicked}/>
-//           </div>
-//         </div>
-//       )
-//   }
+  checkHealth = ()=>{
+    if(this.props.health === 0){
 
-// }
+    }
+  }
+
+  render(){
+    return(
+      <div className="GirImage">
+        <img className="testImg" src={food}  alt="foods" onClick={this.props.trigger}/>
+        {/* <h3>Health: {this.props.health}</h3> */}
+        <h3>{this.props.health <= 0 ? this.state.gameOver : `Health ${this.props.health}`}</h3>
+      </div>
+    )
+  }
+}
+
+
 
 export{
-  Camryn,
-  // Franklin,
-  // Top,
+  Camryn
 }
 
 let Header = function() {
