@@ -1,8 +1,9 @@
-doctype html
-head
-  title Testing Pug File
-  link(rel="stylesheet", type="text/css", href=".testing.css")
-body
+extends layouts/app
+
+block seo
+  title pug testing
+
+block content
   h1 Testing Puge Template Engine
     .card
     if loggedIn
