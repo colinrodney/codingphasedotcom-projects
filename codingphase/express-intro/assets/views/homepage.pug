@@ -1,8 +1,7 @@
-doctype html
-head
-  title Sample Pug File
-h1 This is a Pug file!
-#container.col
-  p This is pretty NEAT-O!
-  script(type='text/javascript').
-    if (foo) bar(1 + 5)
+extends layouts/app.pug
+
+block seo
+  <title>Homepage</title>
+
+block content
+  h1 Homepage

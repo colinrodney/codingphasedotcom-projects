@@ -1,0 +1,15 @@
+doctype html
+head
+  title Testing Pug File
+  link(rel="stylesheet", type="text/css", href=".testing.css")
+body
+  h1 Testing Puge Template Engine
+    .card
+    if loggedIn
+        p 
+          user= `username: ${username}`
+          p #{fname} #{lname}
+          for user in userbank
+            li= user
+              
+  
